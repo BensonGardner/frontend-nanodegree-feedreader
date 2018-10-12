@@ -24,7 +24,7 @@ var allFeeds = [
         name: 'Test Muss',
         url: 'url'
     }, {
-        name: '',
+        name: 'Name of a Test Muss',
         url: 'url'
     }, {
         name: 'Test?',

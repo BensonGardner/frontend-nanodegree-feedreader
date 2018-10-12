@@ -20,6 +20,18 @@ var allFeeds = [
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+    },{
+        name: 'Test Muss',
+        url: 'url'
+    }, {
+        name: '',
+        url: 'url'
+    }, {
+        name: 'Test?',
+        url: 'http://url.url.com/url'
+    }, {
+        name: 'Wisconsin Digital State Archives',
+        url: 'http://www.wistatedocuments.org/cdm/viewfeed/collection/p267601coll4'
     }
 ];
 
@@ -121,6 +133,7 @@ $(function() {
 
         $('body').addClass('menu-hidden');
         loadFeed(item.data('id'));
+        // It looks to me like they forgot to include event.preventDefault(); -- but I'm not sure how that woul work considering the .on() method isn't including an event parameter in the function argument... 
         return false;
     });
 

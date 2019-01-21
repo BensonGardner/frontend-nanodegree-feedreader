@@ -20,15 +20,6 @@ var allFeeds = [
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
-    },{
-        name: 'Test Muss',
-        url: 'url'
-    }, {
-        name: 'Name of a Test Muss',
-        url: 'url'
-    }, {
-        name: 'Test?',
-        url: 'http://url.url.com/url'
     }, {
         name: 'Wisconsin Digital State Archives',
         url: 'http://www.wistatedocuments.org/cdm/viewfeed/collection/p267601coll4'

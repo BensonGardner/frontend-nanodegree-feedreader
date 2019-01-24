@@ -85,9 +85,8 @@ $(function() {
         });
         
         it('should contain at least one entry', function() {
-            var feedEntries = document.getElementsByClassName('feed entry');
-            expect(feedEntries).not.toBe(null);
-            // TEST THIs TO SEE IF THIS IS THE RIGHT WAY TO TEST THAT THERE'S AT LEAST ONE ENTRY
+            var firstFeedEntry = document.querySelector('.feed').querySelector('.entry');
+            expect(firstFeedEntry).not.toBe(null);
         });
     }); 
 

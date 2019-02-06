@@ -97,20 +97,33 @@ $(function() {
          * loadFeed() is asynchronous, we use beforeEach
          * and done. 
          */
-           
-        // Load a new feed.
+               
+        var firstFeed,
+            secondFeed;
+    
+        /* Load a feed, then store the HTML content which is displayed;
+         * then load a second feed and store its content separately.
+         */
         beforeEach(function(done) {
-            loadFeed(1, done);
+            loadFeed(1, function() {
+                firstFeed = document.getElementsByClassName('feed').item(0).innerHTML;
+                loadFeed(0, function() {
+                    secondFeed = document.getElementsByClassName('feed').item(0).innerHTML;
+                    done(); 
+                });
+            });
         });
         
-        // Reset DOM to initial load-state.
+        // Teardown: reset DOM to initial load-state.
         afterAll(function() {
             loadFeed(0);
         });
         
+        /* Ensure the page content was different depending 
+         * on which feed was loaded above.
+         */ 
         it('should load new feed', function() {
-            var title = document.getElementById('unique-title');
-            expect(title.innerHTML).toEqual(allFeeds[1].name);  
+            expect(firstFeed).not.toEqual(secondFeed);
         });
     });
 }());
